@@ -22,6 +22,6 @@ jobs:
       - name: Build project
         run: docker-compose build
       - name: Run tests
-        run: docker-compose exec pytest-memos exec pytest --alluredir=./report
+        run: docker-compose pytest-memos exec pytest --alluredir=./report
       - name: Generate report
         run: allure generate ./report -o ./html
