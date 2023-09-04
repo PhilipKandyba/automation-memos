@@ -14,7 +14,9 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
       - name: Set envs variables
-        run: echo "${{ secrets.ENV_FILE }}" > ./home/.docker.env
+        run: |
+          touch ./home/.docker.env
+          echo "${{ secrets.ENV_FILE }}" > ./home/.docker.env
       - name: Check envs
         run: cat ./home/.docker.env
       - name: Build project
