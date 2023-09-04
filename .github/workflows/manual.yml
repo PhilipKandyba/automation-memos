@@ -14,14 +14,14 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v3
       - name: Set envs variables
-        run: echo "${{ secrets.ENV_FILE }}" > ./config/.docker.env
+        run: echo "${{ secrets.ENV_FILE }}" > ./home/.docker.env
+      - name: Check envs
+        run: cat ./home/.docker.env
       - name: Build project
         run: docker-compose build
       - name: Services Up
         run: |
-          docker-compose --env-file ./config/.docker.env up -d
-      - name: Check envs
-        run: cat ./config/.docker.env
+          docker-compose --env-file ./home/.docker.env up -d
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
