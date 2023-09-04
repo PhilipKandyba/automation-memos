@@ -14,10 +14,10 @@ jobs:
     steps:
       - name: Set variables
         run: |
-          echo BASE_URL="http://memos:5230" > .env.docker
-          echo SELENIUM_HUB_HOST="http://selenium-hub:4444/wd/hub" > .env.docker
-          echo ADMIN_USERNAME=${{secrets.ADMIN_USERNAME}} > .env.docker
-          echo ADMIN_PASSWORD=${{secrets.ADMIN_USERNAME}} > .env.docker
+          echo BASE_URL="http://memos:5230" > .docker.env
+          echo SELENIUM_HUB_HOST="http://selenium-hub:4444/wd/hub" > .docker.env
+          echo ADMIN_USERNAME=${{secrets.ADMIN_USERNAME}} > .docker.env
+          echo ADMIN_PASSWORD=${{secrets.ADMIN_USERNAME}} > .docker.env
       - name: Checkout the code
         uses: actions/checkout@v3
       - name: Build project
