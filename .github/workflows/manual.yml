@@ -23,7 +23,7 @@ jobs:
         run: docker-compose build
       - name: Services Up
         run: |
-          docker-compose --env-file=.docker.env up -d -e ${{ secrets.ENV_FILE }}
+          docker-compose --env-file=.docker.env -e BASE_PAGE=http://memos:5230 -e SELENIUM_HUB_HOST=http://selenium-hub:4444/wd/hub -e ADMIN_USERNAME=test -e ADMIN_PASSWORD=test up -d
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
