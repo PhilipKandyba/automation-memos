@@ -16,14 +16,14 @@ jobs:
       - name: Set envs variables
         run: |
           touch .docker.env
-          echo "${{ secrets.ENV_FILE }}" > .docker.env
+          echo ${{ secrets.ENV_FILE }} > .docker.env
       - name: Check envs
         run: cat .docker.env
       - name: Build project
         run: docker-compose build
       - name: Services Up
         run: |
-          docker-compose --env-file=.docker.env up -d
+          docker-compose --env-file=.docker.env up -d -e ${{ secrets.ENV_FILE }}
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
