@@ -9,21 +9,17 @@ on:
           - remote
 jobs:
   memos-automation:
-    env:
-      BROWSER: "remote"
-      BASE_URL: "http://memos:5230"
-      SELENIUM_HUB_HOST: "http://selenium-hub:4444/wd/hub"
-      ADMIN_USERNAME: ${{secrets.ADMIN_USERNAME}}
-      ADMIN_PASSWORD: ${{secrets.ADMIN_USERNAME}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v3
+      - name: Set envs variables
+        run: echo "${{ secrets.ENV_FILE }}" > .docker.env
       - name: Build project
         run: docker-compose build
       - name: Services Up
         run: |
-          docker-compose up -d
+          docker-compose up -d --env-file .docker.env
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
