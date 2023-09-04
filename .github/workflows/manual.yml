@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Build project
-      - run: docker-compose build
+        run: docker-compose build
       - name: Run tests
-      - run: docker-compose pytest-memos exec pytest --alluredir=./report
+        run: docker-compose pytest-memos exec pytest --alluredir=./report
       - name: Generate report
-      - run: allure generate ./report -o ./html
+        run: allure generate ./report -o ./html
