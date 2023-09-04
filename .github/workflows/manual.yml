@@ -24,4 +24,4 @@ jobs:
         run: |
           docker-compose pytest-memos exec pytest --alluredir=./report
       - name: Generate report
-          run allure generate ./report -o ./html
+        run: allure generate ./report -o ./html
