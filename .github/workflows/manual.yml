@@ -19,7 +19,7 @@ jobs:
         run: docker-compose build
       - name: Services Up
         run: |
-          docker-compose up -d --env-file .docker.env
+          docker-compose --env-file .docker.env up -d
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
