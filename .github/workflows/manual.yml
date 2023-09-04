@@ -23,7 +23,7 @@ jobs:
         run: docker-compose build
       - name: Run tests
         run: |
-          docker-compose up
+          docker-compose up -d
           docker-compose exec pytest-memos pytest --alluredir=./report
       - name: Generate report
         run: docker-compose exec pytest-memos allure generate ./report -o ./html
