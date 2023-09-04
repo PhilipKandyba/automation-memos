@@ -9,6 +9,7 @@ on:
           - remote
 jobs:
   memos-automation:
+    name: Memo automation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
