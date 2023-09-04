@@ -28,5 +28,11 @@ jobs:
         run: sh wait.sh
       - name: Run tests
         run: docker-compose exec -T pytest-memos pytest --alluredir=./report
+        continue-on-error: true
       - name: Generate report
         run: docker-compose exec -T pytest-memos allure generate ./report -o ./html
+      - name: Save Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: html/
