@@ -1,0 +1,5 @@
+[2023-08-30 19:20:25,043: INFO]  1 2 {}
+[2023-08-30 19:20:53,228: INFO]  1, __main__ 2, __main__ {}
+[2023-08-30 19:21:39,708: INFO] Calling function: 1Calling function: 2 {}
+[2023-08-30 19:24:59,920: INFO] Calling function function: Calling 1Calling 2 {}
+[2023-08-30 19:25:15,358: INFO] Calling function function:  1, 2, {}
