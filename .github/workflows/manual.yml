@@ -21,9 +21,12 @@ jobs:
         uses: actions/checkout@v3
       - name: Build project
         run: docker-compose build
-      - name: Run tests
+      - name: Services Up
         run: |
           docker-compose up -d
-          docker-compose exec pytest-memos pytest --alluredir=./report
+      - name: Wait for services
+        run: sh wait.sh
+      - name: Run tests
+        run: docker-compose exec pytest-memos pytest --alluredir=./report
       - name: Generate report
         run: docker-compose exec pytest-memos allure generate ./report -o ./html
