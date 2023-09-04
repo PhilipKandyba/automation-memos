@@ -16,7 +16,7 @@ jobs:
       - name: Set envs variables
         run: |
           touch .docker.env
-          echo ${{ secrets.ENV_FILE }} > .docker.env
+          echo "${{ secrets.ENV_FILE }}" > .docker.env
       - name: Check envs
         run: cat .docker.env
       - name: Build project
