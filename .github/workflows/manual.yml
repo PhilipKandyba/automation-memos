@@ -27,6 +27,6 @@ jobs:
       - name: Wait for services
         run: sh wait.sh
       - name: Run tests
-        run: docker-compose exec pytest-memos pytest --alluredir=./report
+        run: docker-compose exec -T pytest-memos pytest --alluredir=./report
       - name: Generate report
-        run: docker-compose exec pytest-memos allure generate ./report -o ./html
+        run: docker-compose exec -T pytest-memos allure generate ./report -o ./html
