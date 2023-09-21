@@ -1,3 +1,4 @@
+name: Memo automation
 on:
   workflow_dispatch:
     inputs:
