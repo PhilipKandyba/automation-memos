@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "phone": "+1 (123) 456-7890",
+        "address": {
+            "street": "123 Main St",
+            "city": "New York",
+            "state": "NY",
+            "zipcode": "10001"
+        },
+        "orders": [
+            {
+                "order_id": "ORD12345",
+                "date": "2023-09-05",
+                "total_amount": 125.75,
+                "items": [
+                    {
+                        "product_id": "PROD001",
+                        "name": "Widget",
+                        "quantity": 2,
+                        "unit_price": 25.50
+                    },
+                    {
+                        "product_id": "PROD002",
+                        "name": "Gadget",
+                        "quantity": 3,
+                        "unit_price": 20.25
+                    }
+                ]
+            },
+            {
+                "order_id": "ORD54321",
+                "date": "2023-09-10",
+                "total_amount": 98.50,
+                "items": [
+                    {
+                        "product_id": "PROD003",
+                        "name": "Thingamajig",
+                        "quantity": 1,
+                        "unit_price": 49.25
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "phone": "+1 (987) 654-3210",
+        "address": {
+            "street": "456 Oak St",
+            "city": "Los Angeles",
+            "state": "CA",
+            "zipcode": "90001"
+        },
+        "orders": [
+            {
+                "order_id": "ORD98765",
+                "date": "2023-09-08",
+                "total_amount": 75.20,
+                "items": [
+                    {
+                        "product_id": "PROD004",
+                        "name": "Doodad",
+                        "quantity": 4,
+                        "unit_price": 15.05
+                    }
+                ]
+            }
+        ]
+    }
+]
+
